@@ -1,0 +1,48 @@
+from flask import Flask, render_template, request, redirect
+import datahandler
+
+app = Flask(__name__)
+
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/first-page')
+def show_first_page():
+    planets = datahandler.get_first_page()
+    return render_template("first_page.html", planets=planets)
+
+
+@app.route('/second-page', methods=['GET', 'POST'])
+def show_second_page():
+    planets = datahandler.get_second_page()
+    return render_template('second_page.html', planets=planets)
+
+
+@app.route('/third-page', methods=['GET', 'POST'])
+def show_third_page():
+    planets = datahandler.get_third_page()
+    return render_template('third_page.html', planets=planets)
+
+
+@app.route('/fourth-page', methods=['GET', 'POST'])
+def show_fourth_page():
+    planets = datahandler.get_fourth_page()
+    return render_template('fourth_page.html', planets=planets)
+
+
+@app.route('/fifth-page', methods=['GET', 'POST'])
+def show_fifth_page():
+    planets = datahandler.get_fifth_page()
+    return render_template('fifth_page.html', planets=planets)
+
+
+@app.route('/sixth-page', methods=['GET', 'POST'])
+def show_last_page():
+    planets = datahandler.get_last_page()
+    return render_template('sixth_page.html', planets=planets)
+
+
+if __name__ == "__main__":
+    app.run(
+        host='127.0.0.1',
+        port=8000,
+        debug=True)

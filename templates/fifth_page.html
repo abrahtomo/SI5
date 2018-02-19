@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <a href="/fourth-page" class="btn btn-primary btn-lg" role="button">Prevoius page</a>
+    <a class="btn btn-primary btn-lg" href="/sixth-page" role="button">Next page</a>
+</div><br>
+<div class="container">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Planet Name</th>
+                    <th scope="col">Diameter</th>
+                    <th scope="col">Climate</th>
+                    <th scope="col">Terrain</th>
+                    <th scope="col">Surface water pecentage</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Residents</th>
+                    <th scope="col">    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for planet in planets %}
+                <tr>
+                    <td>{{ planet.name }}</td>
+                    <td>{{ planet.diameter }} km</td>
+                    <td>{{ planet.climate }}</td>
+                    <td>{{ planet.terrain }}</td>
+                    <td>{{ planet.surface_water }}%</td>
+                    <td>{{ planet.population}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
