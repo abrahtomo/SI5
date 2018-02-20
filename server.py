@@ -92,8 +92,8 @@ def show_fifth_page():
 
 
 @app.route('/sixth-page', methods=['GET', 'POST'])
-def show_last_page():
-    planets = datahandler.get_last_page()
+def show_sixth_page():
+    planets = datahandler.get_sixth_page()
     for planet in planets:
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
@@ -106,6 +106,23 @@ def show_last_page():
         else:
             planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
     return render_template('sixth_page.html', planets=planets)
+
+
+@app.route('/seventh-page', methods=['GET', 'POST'])
+def show_seventh_page():
+    planets = datahandler.get_seventh_page()
+    for planet in planets:
+        if planet['surface_water'] != 'unknown':
+            planet['surface_water'] = planet['surface_water'] + '%'
+        if planet['diameter'] != 'unknown':
+            planet['diameter'] = planet['diameter'] + 'km'
+        if planet['population'] != 'unknown':
+            planet['population'] = planet['population'] + ' people'
+        if planet['residents'] == []:
+            planet['residents'] = 'No known residents'
+        else:
+            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+    return render_template('seventh_page.html', planets=planets)
 
 
 if __name__ == "__main__":

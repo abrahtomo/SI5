@@ -26,6 +26,11 @@ def get_fifth_page():
     return response['results']
 
 
-def get_last_page():
+def get_sixth_page():
     response = requests.get('https://swapi.co/api/planets/?page=6').json()
+    return response['results']
+
+
+def get_seventh_page():
+    response = requests.get('https://swapi.co/api/planets/?page=7').json()
     return response['results']
