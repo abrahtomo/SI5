@@ -13,7 +13,7 @@
                     <th scope="col">Diameter</th>
                     <th scope="col">Climate</th>
                     <th scope="col">Terrain</th>
-                    <th scope="col">Surface water pecentage</th>
+                    <th scope="col">Surface water percentage</th>
                     <th scope="col">Population</th>
                     <th scope="col">Residents</th>
                     <th scope="col">    </th>
@@ -23,10 +23,10 @@
                 {% for planet in planets %}
                 <tr>
                     <td>{{ planet.name }}</td>
-                    <td>{{ planet.diameter }} km</td>
+                    <td>{{ planet.diameter }}</td>
                     <td>{{ planet.climate }}</td>
                     <td>{{ planet.terrain }}</td>
-                    <td>{{ planet.surface_water }}%</td>
+                    <td>{{ planet.surface_water }}</td>
                     <td>{{ planet.population}}</td>
                 </tr>
                 {% endfor %}
