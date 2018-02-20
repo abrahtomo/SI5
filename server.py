@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import datahandler
+import user_query
 
 app = Flask(__name__)
 
