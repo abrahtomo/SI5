@@ -1,7 +1,3 @@
-table, th, td, label {
-   color: white;
-}
-
-h1{
+table, th, td, label,h1, h3 {
    color: white;
 }

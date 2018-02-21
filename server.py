@@ -131,37 +131,38 @@ def show_seventh_page():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        user = user_query.check_user(request.form['login'])
+        user = user_query.check_user(request.form['register'])
+        print(request.form['register'])
         if len(user) == 0:
             password = user_query.hash_password(request.form['password'])
-            login = request.form['login']
+            register = request.form['register']
 
-            user_query.register(login, password)
-            return redirect('/', already_used=False)
+            user_query.register(register, password)
+            return redirect('/')
         else:
-            return render_template('registration.html', already_used=True)
+            return render_template('wrong.html', already_used=True)
     return render_template('registration.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        user_name = request.form['user_name']
+        user_name = request.form['username']
 
         data = user_query.login(user_name)
         if not data:
             return redirect('/login', log=False)
-        user_id = user_query.get_id_by_user_name(user_name)['user_id']
-        session['user_name'] = user_name
-        session['user_id'] = user_id
-        print(data[0]['user_password'])
-        log = user_query.verify_password(request.form.to_dict()['password'], data[0]['user_password'])
+        user_id = user_query.get_id_by_user_name(user_name)['id']
+        session['username'] = user_name
+        session['id'] = user_id
+        print(data[0]['password'])
+        log = user_query.verify_password(request.form.to_dict()['password'], data[0]['password'])
         if log:
 
             return redirect('/')
         else:
-            session.pop('user_name', None)
-            session.pop('user_id', None)
+            session.pop('username', None)
+            session.pop('id', None)
             log = False
             return redirect('/', log=False)
     return render_template('login.html')
@@ -169,7 +170,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('user_name',None)
+    session.pop('username', None)
     return redirect('/')
 
 

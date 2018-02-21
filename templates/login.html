@@ -3,12 +3,12 @@
 {% block content %}
 {% if not session ['username'] %}
 <div class="container">
-    <form action="/login" method="POST">
-        <li><label for="username">Username</label></li>
-        <li><input type="text" id="username" name="username" class="login-input"></li>
-        <li><label for="password">Password</label></li>
-        <li><input type="password" id="password" name="password" class="login-input"></li>
-        <li><input type="submit" value="Login" class="login-button"></li>
+    <form action="/" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="login-input"><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="login-input"><br>
+        <input type="submit" value="Login" class="btn btn-outline-secondary" role="button">
     </form>
 </div>
 {% endif %}
