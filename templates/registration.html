@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="/" method="POST">
+        <label for="login"> Username</label>
+        <input type="text" id="login" name="login" class="login-input"><br>
+        <label>Password</label>
+        <input type="password" id="password" name="password" class="login-input"><br>
+        <input type="submit" value="Register" class="login-button">
+    </form>
+</div>
+
+{% if already_used %}
+<script>
+    alert('This username is already used!')
+</script>
+{% elif not_used %}
+<script>
+    alert('Registration is succesful')
+</script>
+{% endif %}
+
+{% endblock %}

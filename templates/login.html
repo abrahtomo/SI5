@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% if not session ['username'] %}
+<div class="container">
+    <form action="/login" method="POST">
+        <li><label for="username">Username</label></li>
+        <li><input type="text" id="username" name="username" class="login-input"></li>
+        <li><label for="password">Password</label></li>
+        <li><input type="password" id="password" name="password" class="login-input"></li>
+        <li><input type="submit" value="Login" class="login-button"></li>
+    </form>
+</div>
+{% endif %}
+
+{% if log==False %}
+    <script>
+        alert('Invalid username or password')
+    </script>
+{% endif %}
+
+{% endblock %}
