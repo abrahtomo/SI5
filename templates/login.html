@@ -12,11 +12,12 @@
     </form>
 </div>
 {% endif %}
+{% if session ['username'] %}
+<script>
+    alert('You are already logged in!')
+</script>
 
-{% if log==False %}
-    <script>
-        alert('Invalid username or password')
-    </script>
 {% endif %}
+
 
 {% endblock %}

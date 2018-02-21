@@ -150,11 +150,10 @@ def login():
 
         data = user_query.login(user_name)
         if not data:
-            return redirect(url_for('/login', log=False))
+            return render_template('invalid.html', log=False)
         user_id = user_query.get_id_by_user_name(user_name)['id']
         session['username'] = user_name
         session['id'] = user_id
-        print(data[0]['password'])
         log = user_query.verify_password(request.form.to_dict()['password'], data[0]['password'])
         if log:
 
@@ -163,7 +162,7 @@ def login():
             session.pop('username', None)
             session.pop('id', None)
             log = False
-            return redirect(url_for('/login', log=False))
+            return redirect(url_for('/', log=False))
     return render_template('login.html')
 
 

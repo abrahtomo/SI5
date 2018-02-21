@@ -11,12 +11,14 @@
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="container">
             <div>
+                {% if session ['username'] %}
+                <a class="navbar-brand" href="/">Planet list</a>
+                <a class="navbar-brand" href="/logout">Logout</a>
+                <h6>Logged in as {{ session['username'] }}</h6>
+                {% else %}
                 <a class="navbar-brand" href="/">Planet list</a>
                 <a class="navbar-brand" href="{{ url_for('register') }}">Register</a>
                 <a class="navbar-brand" href="/login">Login</a>
-                <a class="navbar-brand" href="/logout">Logout</a>
-                {% if session['username'] %}
-                <h6>{{ session['username'] }}</h6>
                 {% endif %}
             </div>
         </div>
