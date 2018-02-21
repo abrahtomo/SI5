@@ -132,7 +132,6 @@ def show_seventh_page():
 def register():
     if request.method == 'POST':
         user = user_query.check_user(request.form['register'])
-        print(request.form['register'])
         if len(user) == 0:
             password = user_query.hash_password(request.form['password'])
             register = request.form['register']
@@ -140,7 +139,7 @@ def register():
             user_query.register(register, password)
             return redirect('/')
         else:
-            return render_template('wrong.html', already_used=True)
+            return render_template('wrong.html')
     return render_template('registration.html')
 
 
@@ -151,7 +150,7 @@ def login():
 
         data = user_query.login(user_name)
         if not data:
-            return redirect('/login', log=False)
+            return redirect(url_for('/login', log=False))
         user_id = user_query.get_id_by_user_name(user_name)['id']
         session['username'] = user_name
         session['id'] = user_id
@@ -164,7 +163,7 @@ def login():
             session.pop('username', None)
             session.pop('id', None)
             log = False
-            return redirect('/', log=False)
+            return redirect(url_for('/login', log=False))
     return render_template('login.html')
 
 
