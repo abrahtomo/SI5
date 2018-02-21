@@ -162,7 +162,7 @@ def login():
             session.pop('username', None)
             session.pop('id', None)
             log = False
-            return redirect(url_for('/', log=False))
+            return render_template('fault.html', log=False)
     return render_template('login.html')
 
 

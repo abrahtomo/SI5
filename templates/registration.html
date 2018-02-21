@@ -4,9 +4,9 @@
 <div class="container">
     <form action="/register" method="POST">
         <label for="register"> Username</label>
-        <input type="text" id="register" name="register" class="register-input"><br>
+        <input type="text" id="register" name="register" class="register-input" pattern=".{3,}" required title="3 characters minimum"><br>
         <label>Password</label>
-        <input type="password" id="password" name="password" class="register-input"><br>
+        <input type="password" id="password" name="password" class="register-input" pattern=".{3,}" required title="3 characters minimum"><br>
         <input type="submit" value="Register" class="btn btn-outline-secondary" role="button">
     </form>
 </div>
