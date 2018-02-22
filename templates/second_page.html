@@ -28,11 +28,11 @@
                     <td>{{ planet.terrain }}</td>
                     <td>{{ planet.surface_water }}</td>
                     <td>{{ planet.population}}</td>
-                    <td>{{ planet.residents}}</td>
+                    <td class="residents">{{ planet.residents}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-
+{% include 'modal.html' %}
 {% endblock %}
