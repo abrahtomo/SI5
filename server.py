@@ -15,7 +15,7 @@ def show_first_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -33,7 +33,7 @@ def show_second_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -50,7 +50,7 @@ def show_third_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -67,7 +67,7 @@ def show_fourth_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -84,7 +84,7 @@ def show_fifth_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -101,7 +101,7 @@ def show_sixth_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
@@ -118,7 +118,7 @@ def show_seventh_page():
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
-            planet['diameter'] = planet['diameter'] + 'km'
+            planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
         if planet['residents'] == []:
