@@ -8,4 +8,12 @@ function addButton() {
     }
 }
 
+$.ajax({
+    dataType: "json",
+    url: 'https://api.github.com/repos/atom/atom',
+    success: function(response) {
+        console.log(response['stargazers_count'])
+    }
+});
+
 addButton();
