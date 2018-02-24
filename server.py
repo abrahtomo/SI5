@@ -18,10 +18,6 @@ def show_first_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
 
     return render_template("first_page.html", planets=planets)
 
@@ -36,10 +32,7 @@ def show_second_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('second_page.html', planets=planets)
 
 
@@ -53,10 +46,7 @@ def show_third_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('third_page.html', planets=planets)
 
 
@@ -70,10 +60,7 @@ def show_fourth_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('fourth_page.html', planets=planets)
 
 
@@ -87,27 +74,23 @@ def show_fifth_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('fifth_page.html', planets=planets)
 
 
 @app.route('/sixth-page', methods=['GET', 'POST'])
 def show_sixth_page():
     planets = datahandler.get_sixth_page()
+
     for planet in planets:
+        print(planet['residents'])
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('sixth_page.html', planets=planets)
 
 
@@ -121,10 +104,7 @@ def show_seventh_page():
             planet['diameter'] = planet['diameter'] + ' km'
         if planet['population'] != 'unknown':
             planet['population'] = planet['population'] + ' people'
-        if planet['residents'] == []:
-            planet['residents'] = 'No known residents'
-        else:
-            planet['residents'] = str(len(planet['residents'])) + ' resident(s)'
+
     return render_template('seventh_page.html', planets=planets)
 
 

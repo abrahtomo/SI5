@@ -1,19 +1,48 @@
-function addButton() {
-    var lastCells = document.getElementsByClassName('residents');
-    for (let i=0; i<lastCells.length; i++) {
-        let button = "<button class=\"btn btn-outline-secondary\" role=\"button\" data-toggle=\"modal\" data-target=\"#myModal\">"+lastCells[i].innerHTML+"</button>";
-        if (lastCells[i].innerHTML !== 'No known residents') {
-            lastCells[i].innerHTML=button;
-        }
-    }
-}
+function appendToElement(elementToExtend, textToAppend) {
+            let fakeDiv = document.createElement('div');
+            fakeDiv.innerHTML = textToAppend.trim();
+            elementToExtend.appendChild(fakeDiv.firstChild);
+            return elementToExtend.lastChild;}
 
-$.ajax({
+
+$(document).ready(function () {
+        var buttons = document.getElementsByClassName('resident');
+        for (let button of buttons){
+            button.addEventListener('click', function () {
+                var modalBody = `
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>`
+            })
+        }
+        debugger;
+});
+
+function getResidents() {
+    $.ajax({
     dataType: "json",
     url: 'https://api.github.com/repos/atom/atom',
     success: function(response) {
         console.log(response['stargazers_count'])
     }
-});
+})
 
-addButton();
+}
+
+/*$.ajax({
+    dataType: "json",
+    url: 'https://api.github.com/repos/atom/atom',
+    success: function(response) {
+        console.log(response['stargazers_count'])
+    }
+});*/
+
