@@ -83,7 +83,6 @@ def show_sixth_page():
     planets = datahandler.get_sixth_page()
 
     for planet in planets:
-        print(planet['residents'])
         if planet['surface_water'] != 'unknown':
             planet['surface_water'] = planet['surface_water'] + '%'
         if planet['diameter'] != 'unknown':

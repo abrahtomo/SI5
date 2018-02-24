@@ -6,23 +6,26 @@ function appendToElement(elementToExtend, textToAppend) {
 
 
 $(document).ready(function () {
-        var buttons = document.getElementsByClassName('resident');
+        var buttons = document.getElementsByClassName('residents');
         for (let button of buttons){
             button.addEventListener('click', function () {
+                var residentAPI = this.getAttribute('value');
+                console.log(residentAPI);
+                debugger;
                 var modalBody = `
                 <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
                     <td></td>
                     <td></td>
                 </tr>
             </tbody>`
-            })
+            appendToElement(document.getElementById("modalbody"), modalBody)})
         }
         debugger;
 });
