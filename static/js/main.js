@@ -23,14 +23,14 @@ $(document).ready(function () {
               
                 
                 <tr>
-                    <td class="modaltd">` + response['name'] + `</td>
-                    <td class="modaltd">` + response['height'] +`</td>
-                    <td class="modaltd">` + response['mass'] + `</td>
-                    <td class="modaltd">` + response['hair_colour'] + `</td>
-                    <td class="modaltd">` + response['skin_color'] + `</td>
-                    <td class="modaltd">` + response['eye_color'] + `</td>
-                    <td class="modaltd">` + response['birth_year'] + `</td>
-                    <td class="modaltd">` + response['gender'] + `</td>
+                    <td class="modaltd">${response['name']}</td>
+                    <td class="modaltd">${response['height']}</td>
+                    <td class="modaltd">${response['mass']}</td>
+                    <td class="modaltd">${response['hair_color']}</td>
+                    <td class="modaltd">${response['skin_color']}</td>
+                    <td class="modaltd">${response['eye_color']}</td>
+                    <td class="modaltd">${response['birth_year']}</td>
+                    <td class="modaltd">${response['gender']}</td>
                 </tr>
                 
                 `;
