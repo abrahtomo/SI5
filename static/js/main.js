@@ -20,18 +20,20 @@ $(document).ready(function () {
 
 
                 var modalBody = `
-                <tbody>
+              
+                
                 <tr>
-                    <td>` + response['name'] + `</td>
-                    <td>` + response['height'] +`</td>
-                    <td>` + response['mass'] + `</td>
-                    <td>` + response['hair_colour'] + `</td>
-                    <td>` + response['skin_color'] + `</td>
-                    <td>` + response['eye_color'] + `</td>
-                    <td>` + response['birth_year'] + `</td>
-                    <td>` + response['gender'] + `</td>
+                    <td class="modaltd">` + response['name'] + `</td>
+                    <td class="modaltd">` + response['height'] +`</td>
+                    <td class="modaltd">` + response['mass'] + `</td>
+                    <td class="modaltd">` + response['hair_colour'] + `</td>
+                    <td class="modaltd">` + response['skin_color'] + `</td>
+                    <td class="modaltd">` + response['eye_color'] + `</td>
+                    <td class="modaltd">` + response['birth_year'] + `</td>
+                    <td class="modaltd">` + response['gender'] + `</td>
                 </tr>
-            </tbody>`;
+                
+                `;
             appendToElement(document.getElementById("modalbody"), modalBody)}})}})}});
 
 
