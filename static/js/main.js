@@ -9,43 +9,29 @@ $(document).ready(function () {
         var buttons = document.getElementsByClassName('residents');
         for (let button of buttons){
             button.addEventListener('click', function () {
-                var url = JSON.parse(button.getAttribute("value"))[0];
-                console.log(url);
-                debugger;
+                let myModal = document.getElementById("modalbody");
+                myModal.innerHTML = '';
+                var url = JSON.parse(button.getAttribute("value"));
+                for(let resident of url){
+                $.ajax({
+                    dataType: "json",
+                    url: resident,
+                    success: function(response) {
+
+
                 var modalBody = `
                 <tbody>
                 <tr>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
-                    <td></td>
-                    <td></td>
+                    <td>` + response['name'] + `</td>
+                    <td>` + response['height'] +`</td>
+                    <td>` + response['mass'] + `</td>
+                    <td>` + response['hair_colour'] + `</td>
+                    <td>` + response['skin_color'] + `</td>
+                    <td>` + response['eye_color'] + `</td>
+                    <td>` + response['birth_year'] + `</td>
+                    <td>` + response['gender'] + `</td>
                 </tr>
-            </tbody>`
-            appendToElement(document.getElementById("modalbody"), modalBody)})
-        }
+            </tbody>`;
+            appendToElement(document.getElementById("modalbody"), modalBody)}})}})}});
 
-});
-
-function getResidents() {
-    $.ajax({
-    dataType: "json",
-    url: 'https://api.github.com/repos/atom/atom',
-    success: function(response) {
-        console.log(response['stargazers_count'])
-    }
-})
-
-}
-
-/*$.ajax({
-    dataType: "json",
-    url: 'https://api.github.com/repos/atom/atom',
-    success: function(response) {
-        console.log(response['stargazers_count'])
-    }
-});*/
 
