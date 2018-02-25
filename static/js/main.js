@@ -9,8 +9,8 @@ $(document).ready(function () {
         var buttons = document.getElementsByClassName('residents');
         for (let button of buttons){
             button.addEventListener('click', function () {
-                var residentAPI = this.getAttribute('value');
-                console.log(residentAPI);
+                var url = JSON.parse(button.getAttribute("value"))[0];
+                console.log(url);
                 debugger;
                 var modalBody = `
                 <tbody>
@@ -27,7 +27,7 @@ $(document).ready(function () {
             </tbody>`
             appendToElement(document.getElementById("modalbody"), modalBody)})
         }
-        debugger;
+
 });
 
 function getResidents() {

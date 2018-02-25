@@ -28,8 +28,8 @@
                     <td>{{ planet.terrain }}</td>
                     <td>{{ planet.surface_water }}</td>
                     <td width="200">{{ planet.population}}</td>
-                    {% if planet.residents %}
-                    {% set nr_of_residents = planet.residents|length %}
+                    {% if planet.residentbuttonvalue %}
+                    {% set nr_of_residents = planet.residentbuttonvalue|length %}
                     <td><button type="button" class="btn btn-outline-secondary residents" id="residents" name="residents"
                         value="{{ planet.residents }}" role="button" data-toggle="modal" data-target="#myModal">{{ nr_of_residents }} resident(s)
                     </button></td>
